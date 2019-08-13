@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@master
       - name: test
         run: |
-          mkdir sgreen/stuff
+          mkdir -p sgreen/stuff
           tar -zcvf sgreen/stuff/runner.tar.gz /home/runner/runners/2.156.4/bin
       - uses: actions/upload-artifact@master
         with:
