@@ -12,8 +12,8 @@ jobs:
     - name: Run a multi-line script
       run: |
         mkdir -p sgreen/myartifact
-        echo hello > sgreen/myartifact
+        echo hello > sgreen/myartifact/hello.txt
     - uses: actions/upload-artifact@master
       with:
         name: sgreenartifact1
-        path: sgreen/myartifact
+        path: sgreen/myartifact/hello.txt
