@@ -8,9 +8,9 @@ jobs:
     steps:
     - name: test
       run: |
-        mkdir /sgreen/stuff
+        mkdir sgreen/stuff
         tar -zcvf /sgreen/stuff/runner.tar.gz /home/runner/runners/2.156.4/bin
     - uses: actions/upload-artifact@master
       with:
         name: runner.tar.gz
-        path: /sgreen/stuff/runner.tar.gz
+        path: sgreen/stuff/runner.tar.gz
