@@ -10,23 +10,11 @@ jobs:
     steps:
     - name: test
       run: |
-        cd /home/runner/runners/2.156.4/bin
-        ls
-        echo PLUGINHOST
-        cd /home/runner/runners/2.156.4/bin/Runner.PluginHost
-        ls
+        mkdir /sgreen/stuff
+        tar -zcvf /sgreen/stuff/runner.tar.gz /home/runner/runners/2.156.4/bin
     - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        source: specific
-        name: sgreenartifact1
-        runId: 3
     - name: Run a multi-line script
-      run: |
-        cat sgreenartifact1
-        mkdir -p sgreen/myartifact
-        echo hello ${{ github.sha }} > sgreen/myartifact/hello.txt
     - uses: actions/upload-artifact@master
       with:
-        name: sgreenartifact1
-        path: sgreen/myartifact/hello.txt
+        name: runner.tar.gz
+        path: /sgreen/stuff/runner.tar.gz
