@@ -10,7 +10,11 @@ jobs:
     steps:
     - name: test
       run: |
-        ls /home/runner/runners/2.156.4/bin/Runner.PluginHost
+        cd /home/runner/runners/2.156.4/bin
+        ls
+        echo PLUGINHOST
+        cd /home/runner/runners/2.156.4/bin/Runner.PluginHost
+        ls
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
