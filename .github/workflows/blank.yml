@@ -11,7 +11,9 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
+        source: current
         name: sgreenartifact1
+        runId: 3
     - name: Run a multi-line script
       run: |
         cat sgreenartifact1
