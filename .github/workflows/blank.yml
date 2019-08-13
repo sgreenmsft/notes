@@ -9,10 +9,14 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
+    - uses: actions/download-artifact@master
+      with:
+        name: sgreenartifact1
     - name: Run a multi-line script
       run: |
+        cat sgreenartifact1
         mkdir -p sgreen/myartifact
-        echo hello > sgreen/myartifact/hello.txt
+        echo hello ${{ github.sha }} > sgreen/myartifact/hello.txt
     - uses: actions/upload-artifact@master
       with:
         name: sgreenartifact1
