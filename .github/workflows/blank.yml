@@ -7,10 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: test
-        run: |
-          mkdir -p sgreen/stuff
-          tar -zcvf sgreen/stuff/runner.tar.gz /home/runner/runners/2.156.4/bin
+      - uses: actions/download-artifact@master
+        with:
+          name: something
       - uses: actions/upload-artifact@master
         with:
           name: runner.tar.gz
