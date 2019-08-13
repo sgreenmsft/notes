@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: test
+      run: |
+        ls /home/runner/runners/2.156.4/bin/Runner.PluginHost
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
